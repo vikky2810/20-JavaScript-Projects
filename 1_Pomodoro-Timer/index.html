@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <h1><i data-lucide="clock"></i> Pomodoro Timer</h1>
+        <div class="timer">
+            <div id="timer" class="time-display">25:00</div>
+        </div>
+
+        <div class="buttons">
+            <button id="startBtn" class="control-btn"><i data-lucide="play"></i> Start</button>
+            <button id="pauseBtn" class="control-btn" disabled><i data-lucide="pause"></i> Pause</button>
+            <button id="resetBtn" class="control-btn"><i data-lucide="refresh-cw"></i> Reset</button>
+        </div>
+
+        <div class="session-container">
+            <p id="sessionLabel" class="session-label"><i data-lucide="briefcase"></i> Work Session</p>
+            <div class="time-settings">
+                <div class="setting">
+                    <label><i data-lucide="briefcase"></i> Work Time (minutes):</label>
+                    <input type="number" id="workTime" value="25" min="1" max="60">
+                </div>
+                <div class="setting">
+                    <label><i data-lucide="coffee"></i> Break Time (minutes):</label>
+                    <input type="number" id="breakTime" value="5" min="1" max="15">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

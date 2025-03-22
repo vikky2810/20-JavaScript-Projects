@@ -1,0 +1,100 @@
+# Pomodoro Timer Project Tasks
+
+## Project Setup
+1. **Create Project Directory**
+   - Open VS Code.
+   - Create a new folder: `Pomodoro-Timer`.
+   - Open this folder in VS Code.
+
+2. **Initialize Project Files**
+   - Inside `Pomodoro-Timer`, create the following files:
+     - `index.html`
+     - `style.css`
+     - `script.js`
+
+---
+
+## Task 1: Build the HTML Structure
+1. **Create the Timer Display**
+   - Add a `<div>` to show the countdown timer (default: `25:00`).
+   
+2. **Add Control Buttons**
+   - `Start` button
+   - `Pause` button
+   - `Reset` button
+
+3. **Session Label**
+   - Add a `<p>` tag to indicate `Work` or `Break` mode.
+
+4. **Link CSS and JavaScript**
+   - Connect `style.css` and `script.js` inside `index.html`.
+
+---
+
+## Task 2: Style the UI with CSS
+1. **Design Timer Display**
+   - Use a large font for the timer.
+   - Center it on the page.
+   
+2. **Style Buttons**
+   - Add padding, colors, and hover effects.
+   
+3. **Session Indicator**
+   - Different colors for `Work` (red) and `Break` (green).
+
+---
+
+## Task 3: Implement Timer Logic in JavaScript
+1. **Define Variables**
+   - `timeLeft` (in seconds, default: `25 * 60`).
+   - `timer` (stores the interval ID).
+   - `isRunning` (Boolean to track state).
+
+2. **Create Update Function**
+   - Convert seconds to `MM:SS` format.
+   - Update the display dynamically.
+
+3. **Start Timer Function**
+   - Use `setInterval()` to decrease `timeLeft` every second.
+   - Update the UI.
+
+4. **Pause Timer Function**
+   - Use `clearInterval()` to stop countdown.
+
+5. **Reset Timer Function**
+   - Stop countdown and restore `25:00`.
+
+---
+
+## Task 4: Add Session Switching (Work → Break)
+1. **Auto-Switch to Break**
+   - After `25:00`, start a `5:00` break.
+   - Change session label and color.
+
+2. **Loop Work-Break Cycles**
+   - After a break, restart work session.
+   - Repeat for 4 cycles, then take a long break.
+
+---
+
+## Task 5: Add Enhancements
+1. **Sound Alerts**
+   - Play a beep when the timer reaches `00:00`.
+
+2. **Progress Animation**
+   - Show a progress bar or visual cue.
+
+3. **Dark Mode**
+   - Allow theme toggle option.
+
+---
+
+## Task 6: Test and Debug
+1. **Check Timer Accuracy**
+2. **Fix Pause/Reset Bugs**
+3. **Ensure Smooth Session Switching**
+
+---
+
+### Once all tasks are complete, the Pomodoro Timer is ready! 🚀
+
