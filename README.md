@@ -1,0 +1,34 @@
+# 🚀 20 JavaScript Projects  
+
+A collection of **20 small JavaScript projects** to improve coding skills, explore different web concepts, and build hands-on experience.  
+
+## 📌 Project List  
+1️⃣ **Pomodoro Clock ⏳** – A 25-minute focus timer with break alerts.  
+   - **Concepts**: `setTimeout`, `setInterval`, DOM manipulation.  
+   
+_(More projects will be added soon...)_  
+
+## 🛠️ Technologies Used  
+- **JavaScript (Vanilla JS)** – Core logic and interactivity  
+- **HTML** – Structure of the projects  
+- **CSS** – Styling and animations  
+
+## 📖 How to Use  
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/vikky2810/20-JavaScript-Projects.git
+   cd 20-JavaScript-Projects
+   ```
+2. Open any project folder and launch `index.html` in your browser.  
+
+## 🎯 Purpose of This Repository  
+✅ Strengthen JavaScript fundamentals  
+✅ Practice real-world coding scenarios  
+✅ Explore different **DOM manipulation** and **event handling** techniques  
+
+## 🌟 Contribute  
+This is a personal learning project, but feel free to fork, improve, and share your thoughts!  
+
+---  
+
+🔥 Stay tuned for more exciting projects! 🚀  
