@@ -4,7 +4,10 @@ A collection of **20 small JavaScript projects** to improve coding skills, explo
 
 ## 📌 Project List  
 1️⃣ **Pomodoro Clock ⏳** – A 25-minute focus timer with break alerts.  
-   - **Concepts**: `setTimeout`, `setInterval`, DOM manipulation.  
+   - **Concepts**: `setTimeout`, `setInterval`, DOM manipulation.
+
+2️⃣ **RGB Color Guesser 🎨** – Display a random RGB value, user guesses the correct color.  
+   - **Concepts**: `Math.random()`, event handling, UI feedback.  
    
 _(More projects will be added soon...)_  
 
