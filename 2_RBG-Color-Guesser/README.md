@@ -44,8 +44,6 @@ RGB-Color-Guesser/
 - Implement different difficulty levels.
 - Include sound effects for better user experience.
 
-## License
-This project is open-source and available under the MIT License.
 
 ---
 Enjoy playing! 🎨
