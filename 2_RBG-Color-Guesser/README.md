@@ -2,6 +2,8 @@
 
 A fun and interactive game where the player has to guess the correct color based on an RGB value. The game provides three color options, and the player earns points for correct guesses.
 
+Live preview : https://rbg-color-guesser.vercel.app/
+
 ## Features
 - Generates a random RGB value.
 - Displays three color choices, including the correct one.
