@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* Header/Navbar Styles */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.dark-mode .header {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.dark-mode .logo {
+    color: #f0f0f0;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(0,0,0,0.05);
+}
+
+.dark-mode .theme-btn:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+
+.theme-btn:active {
+    transform: scale(0.95);
+}
+
+.theme-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+/* Gallery Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    background: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: translateY(-5px);
+}
+
+.dark-mode .gallery img {
+    background-color: #2d2d2d;
+    box-shadow: 0 3px 6px rgba(255,255,255,0.1);
+}
+
+/* Loading Styles */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: inherit;
+    display: none;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+.dark-mode .loader {
+    border-color: #444;
+    border-top-color: #f1c40f;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Observer Target */
+.observer-target {
+    height: 10px;
+    width: 100%;
+}
+
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: white; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTop img {
+    width: 44px;
+    height: 34px;
+}
+
+#scrollToTop:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+#scrollToTop:active {
+    transform: scale(0.9);
+}
+
+#scrollToTop.show {
+    display: flex; /* Show when needed */
+    opacity: 1;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .theme-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .gallery img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .gallery img {
+        height: 200px;
+        border-radius: 6px;
+    }
+    
+    .nav-container {
+        padding: 0.75rem;
+    }
+}

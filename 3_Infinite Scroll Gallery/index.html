@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav class="header">
+        <div class="nav-container">
+            <h1 class="logo">🌌 Infinite Image Gallery</h1>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                <img id="theme-icon" class="theme-icon" src="sun.png" alt="Theme toggle">
+            </button>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div id="gallery" class="gallery"></div>
+        <div id="loading" class="loading">
+            <div class="loader"></div>
+            Loading more images...
+        </div>
+        <div id="observer" class="observer-target"></div>
+        <button id="scrollToTop">
+            <img src="top-up.png" alt="Scroll to top">
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
