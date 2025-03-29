@@ -8,6 +8,9 @@ A collection of **20 small JavaScript projects** to improve coding skills, explo
 
 2️⃣ **RGB Color Guesser 🎨** – Display a random RGB value, user guesses the correct color.  
    - **Concepts**: `Math.random()`, event handling, UI feedback.  
+
+3️⃣ **Infinite Scroll Gallery 📸** – Load new images as the user scrolls down.  
+   - **Concepts**: `Intersection Observer API`, API calls. 
    
 _(More projects will be added soon...)_  
 
