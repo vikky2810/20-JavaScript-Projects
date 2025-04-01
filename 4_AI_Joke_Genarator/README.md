@@ -52,9 +52,4 @@ Feel free to contribute! You can:
 - Add more animations
 - Enhance functionality with additional joke categories
 
-## License
-This project is licensed under the MIT License.
-
----
-### Have fun coding and laughing at programming jokes! 😆
 
