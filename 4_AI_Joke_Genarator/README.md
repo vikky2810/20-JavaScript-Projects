@@ -17,8 +17,8 @@ A simple web application that generates programming-related jokes using the [Jok
 ## Installation & Usage
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ai-programming-joke-generator.git
-   cd ai-programming-joke-generator
+   git clone https://github.com/vikky2810/20-JavaScript-Projects.git
+   cd 4_AI_Joke_Genarator
    ```
 2. Open `index.html` in your browser.
 
@@ -43,7 +43,8 @@ This project utilizes the JokeAPI to fetch programming-related jokes:
 5. If an error occurs (e.g., no internet), a message is displayed instead.
 
 ## Demo
-You can try the live demo [here](#).
+You can try the live demo [here](https://funnybot-ai.vercel.app
+).
 
 ## Contributing
 Feel free to contribute! You can:
