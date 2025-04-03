@@ -53,7 +53,7 @@ password-strength-checker/
 
 ## Demo
 
-You can try the live demo [here](#). (Add a link to your hosted project if available.)
+You can try the live demo [here](https://secure-password-checkerr.vercel.app/). (Add a link to your hosted project if available.)
 
 ## Contributing
 
