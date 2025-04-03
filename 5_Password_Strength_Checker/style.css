@@ -1,0 +1,122 @@
+* {
+    font-family: "Outfit", sans-serif;
+}
+
+
+/* make this password field center horizontally of screne */
+#password {
+    width: 100%;
+    max-width: 400px; /* Set a maximum width for the password field */
+    margin: 5% 10%; /* Center the password field */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/* make this strength text into down right side of password field */
+#strength-text{
+    margin-top: -20px; /* Adjust the margin to position it correctly */
+    margin-left: 300px; /* Adjust the margin to position it correctly */
+}
+
+
+.password-meter-container {
+    max-width: 600px;
+    margin: 0 auto; /* Center the container */
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    margin: 0 auto; /* Center the card */
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.password-requirements {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.requirements-list {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.requirement {
+    margin-bottom: 8px;
+}
+
+.progress {
+    height: 8px;
+    background-color: #e9ecef;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    height: 8px;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+/* Strength meter colors */
+.strength-very-weak {
+    background-color: #dc3545;
+    width: 20%;
+}
+
+.strength-weak {
+    background-color: #ffc107;
+    width: 40%;
+}
+
+.strength-medium {
+    background-color: #fd7e14;
+    width: 60%;
+}
+
+.strength-strong {
+    background-color: #20c997;
+    width: 80%;
+}
+
+.strength-very-strong {
+    background-color: #28a745;
+    width: 100%;
+}
+
+
+/* make this button NICE with UI */
+#toggle-password
+{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: -50px; /* Add some space between the password field and the button */
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -4rem;
+}

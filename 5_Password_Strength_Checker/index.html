@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Meter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="password-meter-container">
+        <div class="card">
+            <div class="card-header">Create a Password</div>
+            <div class="container">
+                <input type="password" id="password" placeholder="Enter your password" />
+                <button id="toggle-password" class="toggle-password"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <p class="strength-text" id="strength-text">Password Strength: <span id="strength-value">Weak</span></p>
+            <div class="password-requirements">
+                <ul class="requirements-list">
+                    <li class="requirement" id="1"><i class="fa-solid fa-circle-xmark"></i>  At least 8 characters</li>
+                    <li class="requirement" id="2"><i class="fa-solid fa-circle-xmark"></i>  At least one uppercase letter</li>
+                    <li class="requirement" id="3"><i class="fa-solid fa-circle-xmark"></i>  At least one lowercase letter</li>
+                    <li class="requirement" id="4"><i class="fa-solid fa-circle-xmark"></i>  At least one number</li>
+                    <li class="requirement" id="5"><i class="fa-solid fa-circle-xmark"></i>  At least one special character</li>
+                </ul>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
