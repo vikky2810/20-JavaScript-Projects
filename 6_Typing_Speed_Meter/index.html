@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TypeMaster: Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🔤 TypeMaster: Typing Speed Test</h1>
+
+  <div id="textDisplay"></div>
+
+  <textarea id="textInput" placeholder="Start typing here..." disabled></textarea><br>
+  <button id="startBtn">Start Test</button>
+
+  <div id="stats">
+    <div class="stat">⏱️ Time: <span id="timer">0</span>s</div>
+    <div class="stat">⚡ WPM: <span id="wpm">0</span></div>
+    <div class="stat">✅ Accuracy: <span id="accuracy">100</span>%</div>
+    <div class="stat">❌ Errors: <span id="errors">0</span></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

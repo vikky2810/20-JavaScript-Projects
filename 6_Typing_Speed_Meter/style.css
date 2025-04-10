@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  margin: 20px 0;
+  color: #89b4fa;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px rgba(137, 180, 250, 0.3);
+}
+
+#textDisplay {
+  background-color: #313244;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.6;
+  min-height: 150px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  max-height: 250px;
+  transition: all 0.3s ease;
+}
+
+#textDisplay::-webkit-scrollbar {
+  width: 8px;
+}
+
+#textDisplay::-webkit-scrollbar-track {
+  background: #1e1e2e;
+  border-radius: 4px;
+}
+
+#textDisplay::-webkit-scrollbar-thumb {
+  background: #45475a;
+  border-radius: 4px;
+}
+
+#textDisplay::-webkit-scrollbar-thumb:hover {
+  background: #89b4fa;
+}
+
+.current-word {
+  background-color: #45475a;
+  border-radius: 4px;
+  padding: 2px 0;
+}
+
+.correct {
+  color: #a6e3a1;
+}
+
+.incorrect {
+  color: #f38ba8;
+  text-decoration: underline;
+}
+
+#textInput {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #313244;
+  color: #cdd6f4;
+  font-size: 18px;
+  margin-bottom: 20px;
+  resize: none;
+  height: 80px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#textInput:focus {
+  outline: 2px solid #89b4fa;
+  box-shadow: 0 0 10px rgba(137, 180, 250, 0.5);
+}
+
+#textInput:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+#startBtn, #restartBtn {
+  background-color: #89b4fa;
+  color: #1e1e2e;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#startBtn:hover, #restartBtn:hover {
+  background-color: #74c7ec;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#startBtn:active, #restartBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.stat {
+  background-color: #313244;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 150px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  background-color: #f5c2e7;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+  margin-left: -2px;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.timer-ring {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #89b4fa;
+  border-left-color: transparent;
+  display: inline-block;
+  margin-right: 5px;
+  animation: rotate 1s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#restart-container {
+  margin-top: 20px;
+}
+
+#restartBtn {
+  background-color: #f5c2e7;
+  color: #1e1e2e;
+}
+
+#restartBtn:hover {
+  background-color: #cba6f7;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  #textDisplay, #textInput {
+    padding: 15px;
+    font-size: 18px;
+  }
+  
+  .stat {
+    min-width: 120px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Animation for completion message */
+.completion-message {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #45475a;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Additional styles for settings panel components */
+.settings-panel label {
+  color: #89b4fa;
+}
+
+/* Keyboard shortcut hint */
+.keyboard-shortcut {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  color: #6c7086;
+  vertical-align: middle;
+}
+
+.keyboard-shortcut kbd {
+  background-color: #45475a;
+  border-radius: 3px;
+  border: 1px solid #6c7086;
+  padding: 1px 4px;
+  font-family: monospace;
+}
