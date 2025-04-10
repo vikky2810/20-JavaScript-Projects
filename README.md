@@ -11,6 +11,14 @@ A collection of **20 small JavaScript projects** to improve coding skills, explo
 
 3️⃣ **Infinite Scroll Gallery 📸** – Load new images as the user scrolls down.  
    - **Concepts**: `Intersection Observer API`, API calls. 
+
+4️⃣ **AI Programming Joke Generator 🤖**  
+Generates programming-related jokes using the [JokeAPI](https://jokeapi.dev/) with a stylish UI and animation effects.  
+- **Concepts**: `Fetch API`, error handling, animations, async UI updates  
+
+5️⃣ **Password Strength Checker 🔐**  
+Checks and visualizes the strength of a password in real-time based on multiple security criteria.  
+- **Concepts**: `DOM manipulation`, regex validation, dynamic progress bar, password visibility toggle  
    
 _(More projects will be added soon...)_  
 
