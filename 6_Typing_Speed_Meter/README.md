@@ -42,7 +42,7 @@ typing-speed-test/
 
 ## 📸 Demo
 
-Live demo [Vercel](https://typiqo.vercel.app/)
+Live demo 👉👉👉[Here](https://typiqo.vercel.app/)👈👈👈
 
 ## 🤝 Contributing
 
