@@ -1,0 +1,727 @@
+:root {
+    /* Light theme variables */
+    --bg-color: #f8fafc;
+    --container-bg: #ffffff;
+    --text-color: #334155;
+    --toolbar-bg: #f1f5f9;
+    --border-color: #e2e8f0;
+    --code-bg: #f8fafc;
+    --blockquote-color: #64748b;
+    --shadow-color: rgba(51, 65, 85, 0.1);
+    --focus-color: #3b82f6;
+    --accent-color: #2563eb;
+    --hover-color: #f1f5f9;
+    --scrollbar-thumb: #cbd5e1;
+    --scrollbar-track: #f1f5f9;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --container-bg: #1e293b;
+    --text-color: #e2e8f0;
+    --toolbar-bg: #334155;
+    --border-color: #475569;
+    --code-bg: #282e3f;
+    --blockquote-color: #94a3b8;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --focus-color: #60a5fa;
+    --accent-color: #3b82f6;
+    --hover-color: #334155;
+    --scrollbar-thumb: #475569;
+    --scrollbar-track: #1e293b;
+}
+
+/* Add custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Base container modifications */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.editor-container, .preview-container {
+    display: flex;
+    flex-direction: column;
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    height: calc(100vh - 3rem);
+    overflow: hidden;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0.75rem;
+    background: var(--toolbar-bg);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--text-color);
+    border-radius: 12px 12px 0 0;
+    height: 60px;
+}
+
+/* Add these styles for the formatting toolbar */
+.format-buttons {
+    display: flex;
+    gap: 6px;
+    padding-right: 16px;
+    margin-right: 16px;
+    border-right: 1px solid var(--border-color);
+}
+
+.format-btn {
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-weight: bold;
+    min-width: 32px;
+    height: 32px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.format-btn i {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.toolbar-button {
+    background: var(--toolbar-bg);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    font-size: 14px;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.toolbar-button:hover {
+    background: var(--hover-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+/* Update existing toolbar styles */
+.toolbar-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Update the editor-wrapper styles */
+.editor-wrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+    background: var(--container-bg);
+    overflow: hidden;
+    height: calc(100% - 110px);
+}
+
+/* Update the editor styles */
+#editor {
+    flex: 1;
+    padding: 1.5rem;
+    border: none;
+    resize: none;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    background: var(--container-bg);
+    color: var(--text-color);
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%;
+    height: 100%; /* Take full height of wrapper */
+}
+
+#editor:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 1px var(--focus-color);
+}
+
+/* Update the preview styles */
+#preview {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--container-bg);
+    height: calc(100% - 60px);
+}
+
+#preview h1 { font-size: 2rem; margin: 1.5rem 0 1rem; }
+#preview h2 { font-size: 1.5rem; margin: 1.25rem 0 0.75rem; }
+#preview h3 { font-size: 1.25rem; margin: 1rem 0 0.5rem; }
+#preview p { margin: 1rem 0; }
+#preview pre { 
+    background: var(--code-bg); 
+    padding: 1rem; 
+    border-radius: 8px; 
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+#preview code { 
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    background: var(--code-bg);
+}
+#preview pre code {
+    color: var(--text-color);
+    background: transparent;
+    padding: 0;
+}
+#preview blockquote { border-left: 4px solid var(--border-color); padding-left: 1rem; color: var(--blockquote-color); margin: 1rem 0; }
+#preview table { border-collapse: collapse; margin: 1rem 0; }
+#preview th, #preview td { border: 1px solid var(--border-color); padding: 0.5rem; }
+#preview tr:nth-child(even) { background-color: var(--code-bg); }
+#preview a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+#preview a:hover {
+    text-decoration: underline;
+}
+
+/* Update the fullscreen styles */
+.fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--container-bg);
+    border-radius: 0 !important;
+}
+
+.fullscreen .editor-wrapper {
+    height: calc(100vh - 79px) !important; /* Account for toolbar and status bar */
+}
+
+.fullscreen #preview {
+    height: calc(100vh - 49px) !important; /* Account for toolbar */
+    max-width: 100% !important;
+    padding: 2rem;
+}
+
+.fullscreen textarea#editor {
+    height: 100% !important;
+}
+
+.fullscreen .toolbar {
+    border-radius: 0;
+}
+
+.fullscreen .status-bar {
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+/* Update the status bar */
+.status-bar {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--toolbar-bg);
+    border-top: 1px solid var(--border-color);
+    color: var(--blockquote-color);
+    font-size: 12px;
+    height: 40px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .editor-container, .preview-container {
+        height: auto;
+        min-height: 50vh;
+        margin-bottom: 1rem;
+    }
+
+    .toolbar {
+        padding: 0.5rem;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .toolbar-buttons {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .format-buttons {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .format-btn {
+        min-width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .action-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .editor-wrapper {
+        height: 40vh;
+    }
+
+    #preview {
+        height: 40vh;
+        padding: 1rem;
+    }
+
+    /* Command palette modifications for mobile */
+    .command-palette {
+        width: 90vw;
+        max-height: 80vh;
+        top: 10vh;
+    }
+
+    /* Status bar modifications */
+    .status-bar {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* Floating theme toggle adjustment */
+    .floating-theme-toggle {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Shortcuts modal adjustment */
+    .shortcuts-modal {
+        width: 95vw;
+        max-height: 90vh;
+        padding: 1rem;
+    }
+
+    .shortcuts-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .toolbar-button, .format-btn {
+        padding: 12px;
+    }
+
+    .command-item {
+        padding: 12px 8px;
+    }
+
+    #editor {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+/* Landscape mode adjustments */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .editor-container, .preview-container {
+        height: 85vh;
+    }
+
+    .editor-wrapper {
+        height: calc(100% - 120px);
+    }
+}
+
+/* Style for floating theme toggle button */
+.floating-theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    background: var(--container-bg);
+    border: 2px solid var(--border-color);
+    color: var(--accent-color);
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-theme-toggle:hover {
+    transform: translateY(-2px) rotate(15deg);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    background: var(--hover-color);
+    border-color: var(--accent-color);
+}
+
+.floating-theme-toggle:active {
+    transform: translateY(0) rotate(0);
+}
+
+/* Add responsive positioning for mobile */
+@media (max-width: 768px) {
+    .floating-theme-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
+
+/* Remove the old theme-toggle styles */
+.theme-toggle {
+    display: none;
+}
+
+/* Shortcuts Modal Styles */
+.shortcuts-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+}
+
+.shortcuts-content {
+    position: relative;
+    background-color: var(--container-bg);
+    margin: 15vh auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.shortcuts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.shortcuts-header h2 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+}
+
+kbd {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.875rem;
+    font-family: monospace;
+    line-height: 1;
+    color: var(--accent-color);
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 2px var(--shadow-color);
+}
+
+/* Floating Toolbar */
+.floating-toolbar {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    z-index: 100;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.floating-toolbar:hover {
+    opacity: 1;
+}
+
+.format-btn {
+    background: var(--toolbar-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.format-btn:hover {
+    background: var(--hover-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Loading Indicator */
+.loading {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border-color);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Split View Styles */
+.container.horizontal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+/* Command Palette Styles */
+.command-palette {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90vw;
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    z-index: 1000;
+    display: none;
+}
+
+.command-palette-content {
+    padding: 1rem;
+}
+
+.command-search {
+    margin-bottom: 1rem;
+}
+
+.command-search input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.command-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.command-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.command-item:hover {
+    background: var(--hover-color);
+}
+
+.command-item.selected {
+    background: var(--hover-color);
+}
+
+.command-shortcut {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--blockquote-color);
+}
+
+.command-shortcut kbd {
+    padding: 0.2rem 0.4rem;
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Help Tooltip Styles */
+.help-tooltip {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.help-tooltip.show {
+    opacity: 1;
+}
+
+.help-tooltip kbd {
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+    margin: 0 2px;
+}
+
+.tooltip-content {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: var(--text-color);
+}

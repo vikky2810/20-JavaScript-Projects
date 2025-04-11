@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Previewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css" id="light-theme-highlight">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css" id="dark-theme-highlight">
+    <style>
+        .fullscreen {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            z-index: 1000;
+            width: 100vw !important;
+            height: 100vh !important;
+            margin: 0 !important;
+            background: var(--container-bg);
+        }
+        .save-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 8px;
+            display: none;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            z-index: 1002;
+        }
+        .toolbar-button {
+            background: var(--toolbar-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 10px;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+        }
+        .toolbar-button:hover {
+            background: var(--hover-color);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        .floating-theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--container-bg);
+            border: 2px solid var(--border-color);
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+        .floating-theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px var(--shadow-color);
+            border-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <button id="themeToggle" class="floating-theme-toggle" onclick="toggleTheme()">🌓</button>
+    <div class="container">
+        <div class="editor-container">
+            <div class="toolbar">
+                <span>Markdown Editor</span>
+                <div class="toolbar-buttons">
+                    <!-- Add these new formatting buttons -->
+                    <div class="format-buttons">
+                        <button class="toolbar-button format-btn" onclick="formatText('bold')" title="Bold (Ctrl+B)">B</button>
+                        <button class="toolbar-button format-btn" onclick="formatText('italic')" title="Italic (Ctrl+I)"><i>I</i></button>
+                        <button class="toolbar-button format-btn" onclick="formatText('heading')" title="Heading (Ctrl+1)">H</button>
+                        <button class="toolbar-button format-btn" onclick="formatText('link')" title="Link (Ctrl+U)">🔗</button>
+                        <button class="toolbar-button format-btn" onclick="formatText('list')" title="List (Ctrl+L)">•</button>
+                        <button class="toolbar-button format-btn" onclick="formatText('olist')" title="Numbered List (Ctrl+Alt+L)">1.</button>
+                        <button class="toolbar-button format-btn" onclick="formatText('code')" title="Code (Ctrl+K)">〈/〉</button>
+                        <button class="toolbar-button format-btn" onclick="formatText('quote')" title="Quote">"</button>
+                        <button class="toolbar-button format-btn" onclick="formatText('table')" title="Table (Ctrl+T)">⚏</button>
+                    </div>
+                    <div class="action-buttons">
+                        <!-- Existing buttons -->
+                        <button class="toolbar-button" onclick="downloadMarkdown('markdown')" title="Download MD">📝</button>
+                        <button class="toolbar-button" onclick="downloadMarkdown('html')" title="Download HTML">📄</button>
+                        <button class="toolbar-button" onclick="toggleFullscreen('editor')" title="Fullscreen">⛶</button>
+                    </div>
+                </div>
+            </div>
+            <div class="editor-wrapper">
+                <textarea id="editor" spellcheck="false"></textarea>
+            </div>
+            <div class="status-bar">
+                <div class="word-count">Words: 0</div>
+                <div class="char-count">Characters: 0</div>
+                <div class="line-count">Lines: 0</div>
+            </div>
+        </div>
+        
+        <div class="preview-container">
+            <div class="toolbar">
+                <span>Preview</span>
+                <div class="toolbar-buttons">
+                    <button class="toolbar-button" onclick="toggleFullscreen('preview')" title="Fullscreen">⛶</button>
+                </div>
+            </div>
+            <div id="preview"></div>
+        </div>
+    </div>
+    <div id="saveNotification" class="save-notification">Changes Saved!</div>
+
+    <div id="shortcutsModal" class="shortcuts-modal">
+        <div class="shortcuts-content">
+            <div class="shortcuts-header">
+                <h2>Keyboard Shortcuts</h2>
+                <button class="close-button" onclick="toggleShortcutsModal()">×</button>
+            </div>
+            <div class="shortcuts-grid">
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>B</kbd>
+                    <span>Bold text</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>I</kbd>
+                    <span>Italic text</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                    <span>Code block</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>S</kbd>
+                    <span>Save changes</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>
+                    <span>Download file</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Esc</kbd>
+                    <span>Exit fullscreen</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>?</kbd>
+                    <span>Show shortcuts</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>L</kbd>
+                    <span>Unordered list</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd>
+                    <span>Ordered list</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>1</kbd>...<kbd>6</kbd>
+                    <span>Heading levels</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>U</kbd>
+                    <span>Insert link</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>T</kbd>
+                    <span>Insert table</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>
+                    <span>Download HTML</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.18/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.6/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+
+    <div id="commandPalette" class="command-palette">
+        <div class="command-palette-content">
+            <div class="command-search">
+                <input type="text" id="commandSearch" placeholder="Search commands..." />
+            </div>
+            <div class="command-list" id="commandList">
+                <!-- Commands will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <div id="helpTooltip" class="help-tooltip">
+        <div class="tooltip-content">
+            <p>Press <kbd>/</kbd> to open commands menu</p>
+            <p>Press <kbd>?</kbd> to view all shortcuts</p>
+        </div>
+    </div>
+</body>
+</html>
