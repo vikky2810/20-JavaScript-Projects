@@ -20,6 +20,10 @@ Generates programming-related jokes using the [JokeAPI](https://jokeapi.dev/) wi
 Checks and visualizes the strength of a password in real-time based on multiple security criteria.  
 - **Concepts**: `DOM manipulation`, regex validation, dynamic progress bar, password visibility toggle  
    
+6️⃣ **TypeMaster: Typing Speed Test 🧠**  
+A sleek dark-themed app to measure your typing speed, accuracy, and error count in real-time.  
+- **Concepts**: `Real-time input tracking`, `WPM & accuracy calculation`, `DOM manipulation`, animations  
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
