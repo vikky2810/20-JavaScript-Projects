@@ -24,6 +24,10 @@ Checks and visualizes the strength of a password in real-time based on multiple 
 A sleek dark-themed app to measure your typing speed, accuracy, and error count in real-time.  
 - **Concepts**: `Real-time input tracking`, `WPM & accuracy calculation`, `DOM manipulation`, animations  
 
+7️⃣ **Markdown Previewer 📝**  
+   A browser-based Markdown editor and live previewer with syntax highlighting, export options, and dark/light themes.  
+- **Concepts**: `Markdown parsing (Marked.js)`, `XSS sanitization (DOMPurify)`, `Syntax highlighting (highlight.js)`, keyboard shortcuts, command palette, export, fullscreen, autosave  
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
