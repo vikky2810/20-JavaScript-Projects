@@ -44,7 +44,7 @@ qr-code-generator/
 
 ## 📸 Demo
 
-Live demo 👉👉👉[Here](https://example.com)👈👈👈
+Live demo 👉👉👉[Here](qrcodetoolkit.vercel.app)👈👈👈
 
 ## 🤝 Contributing
 
