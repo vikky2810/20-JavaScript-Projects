@@ -28,6 +28,10 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
    A browser-based Markdown editor and live previewer with syntax highlighting, export options, and dark/light themes.  
 - **Concepts**: `Markdown parsing (Marked.js)`, `XSS sanitization (DOMPurify)`, `Syntax highlighting (highlight.js)`, keyboard shortcuts, command palette, export, fullscreen, autosave  
 
+
+8️⃣ **QR Code Generator 🖼️** – Generate QR codes from URLs with live input, theme toggle, and download options.  
+   - **Concepts**: `qrcode-generator.js`, input validation, dynamic downloads, dark/light themes, real-time feedback
+   
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
