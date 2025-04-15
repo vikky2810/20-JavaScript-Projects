@@ -21,8 +21,8 @@ A versatile QR Code generator with real-time URL input, custom themes, and forma
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/vikky2810/qr-code-generator.git
-   cd qr-code-generator
+   git clone https://github.com/vikky2810/20-JavaScript-Projects
+   cd 8_QR_Code_Generator
    ```
 2. Open `index.html` in your browser.
 
