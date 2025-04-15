@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-qrcode"></i> QR Code Generator</h1>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-sun"></i>
+        </button>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="input-section card">
+                <div class="url-input">
+                    <label for="url">Enter URL</label>
+                    <input type="url" id="url" placeholder="https://example.com" autocomplete="off">
+                    <div id="urlValidation" class="url-validation"></div>
+                </div>
+            </section>
+
+            <section class="output-section card">
+                <div class="qr-preview">
+                    <label>QR Code Preview</label>
+                    <div id="qrcode"></div>
+                    <div id="loadingIndicator">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                </div>
+                
+                <div class="download-options">
+                    <div class="download-label">Download QR Code</div>
+                    <div class="format-buttons">
+                        <button class="format-button" data-format="png">
+                            <i class="fas fa-download"></i> PNG
+                        </button>
+                        <button class="format-button" data-format="svg">
+                            <i class="fas fa-download"></i> SVG
+                        </button>
+                        <button class="format-button" data-format="jpeg">
+                            <i class="fas fa-download"></i> JPEG
+                        </button>
+                    </div>
+                    <div id="statusMessage" class="status-message"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Simple QR Code Generator &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
