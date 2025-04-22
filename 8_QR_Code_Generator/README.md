@@ -1,7 +1,7 @@
 # 🖼️ QR Code Generator
 
 A versatile QR Code generator with real-time URL input, custom themes, and format download options. Users can generate QR codes from URLs, download them as PNG, JPEG, or SVG, and easily switch between dark and light themes for a smooth user experience.
-
+                                                                                                                                                                                                                                                                                                                                                                       
 ## 🚀 Features
 - Generate QR codes instantly from URLs
 - Dark and Light theme toggle
