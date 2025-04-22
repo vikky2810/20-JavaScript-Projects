@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button 
+        class="theme-toggle" 
+        id="theme-toggle" 
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        <i class="fas fa-sun" aria-hidden="true"></i>
+        <span>Toggle Theme</span>
+    </button>
+    <div class="container" role="main">
+        <div class="header" role="banner">
+            <h1><i class="fab fa-github" aria-hidden="true"></i> GitHub Profile Viewer</h1>
+            <p>Search for a GitHub user and view their profile information.</p>
+        </div>
+        
+        <div class="search-container" role="search" aria-label="Press / or . to focus search">
+            <input 
+                type="text" 
+                id="username-input" 
+                placeholder="Enter GitHub username..."
+                aria-label="Enter GitHub username"
+                required>
+            <button id="search-btn" aria-label="Search for GitHub user">Search</button>
+        </div>
+
+        <div class="search-history" role="complementary" aria-label="Search History">
+            <h3>Recent Searches</h3>
+            <ul id="search-history-list" class="search-history-list" aria-label="List of recent searches">
+                <!-- Search history items will be added here -->
+            </ul>
+        </div>
+        
+        <div class="error-container" id="error-container" role="alert" aria-live="polite">
+            <p id="error-message"></p>
+        </div>
+        
+        <div class="loading-spinner" id="loading-spinner" role="status" aria-live="polite">
+            <div class="spinner" aria-hidden="true"></div>
+            <p>Loading profile data...</p>
+        </div>
+        
+        <div class="profile-container" id="profile-container" role="region" aria-label="User Profile">
+            <div class="profile-header">
+                <img src="" alt="Profile Avatar" class="avatar" id="avatar">
+                <div class="profile-info" aria-live="polite">
+                    <h2 id="name"></h2>
+                    <p id="username" aria-label="GitHub username"></p>
+                    <p id="bio" aria-label="User biography"></p>
+                    <a href="" id="view-profile" class="view-profile-btn" target="_blank" rel="noopener noreferrer" aria-label="View full profile on GitHub">View on GitHub</a>
+                </div>
+            </div>
+            
+            <div class="profile-stats" role="group" aria-label="User Statistics">
+                <div class="stat-item" role="region" aria-label="Repository Count">
+                    <h3 id="repo-count-label">Repositories</h3>
+                    <p id="repo-count" aria-labelledby="repo-count-label">0</p>
+                </div>
+                <div class="stat-item" role="region" aria-label="Followers Count">
+                    <h3 id="followers-count-label">Followers</h3>
+                    <p id="followers-count" aria-labelledby="followers-count-label">0</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Following</h3>
+                    <p id="following-count">0</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Contributions</h3>
+                    <p id="contributions-count">-</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="repositories-container" id="repositories-container" role="region" aria-label="Recent Repositories">
+            <h2 id="repo-list-label">Recent Repositories</h2>
+            <ul class="repo-list" id="repo-list" aria-labelledby="repo-list-label">
+                <!-- Repository items will be added here dynamically -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
