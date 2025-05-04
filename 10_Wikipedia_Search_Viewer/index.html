@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia Search Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Wikipedia Search Viewer</h1>
+            <p>Search Wikipedia articles and view their summaries.</p>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="What do you want to know about?">
+            <button id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <div class="message-container" id="message-container"></div>
+        
+        <div class="results-container" id="results-container"></div>
+    </div>
+    
+    <footer>
+        <p>Powered by <a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank">Wikipedia API</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
