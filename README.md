@@ -31,7 +31,15 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
 
 8️⃣ **QR Code Generator 🖼️** – Generate QR codes from URLs with live input, theme toggle, and download options.  
    - **Concepts**: `qrcode-generator.js`, input validation, dynamic downloads, dark/light themes, real-time feedback
-   
+
+
+9️⃣ **GitHub Profile Viewer ☀️** – View GitHub profiles and repositories, displaying user information, repositories, and contribution stats
+– Utilizing the GitHub API to fetch user data, display repositories, and visualize contributions over time. 
+
+- **Concepts** : API calls, data visualization, asynchronous programming, user authentication, responsive design, error handling
+
+
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
