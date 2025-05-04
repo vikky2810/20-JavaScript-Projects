@@ -39,6 +39,20 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
 - **Concepts** : API calls, data visualization, asynchronous programming, user authentication, responsive design, error handling
 
 
+🔟 **Wikipedia Search Viewer 🔍** – A modern Wikipedia search interface with instant results and dark mode support.
+- **Key Features**:
+  - Real-time Wikipedia article search
+  - Dark/Light theme with system preference detection
+  - Responsive card-based results layout
+  - Search suggestions and error handling
+  
+- **Concepts**: 
+  - `Wikipedia API Integration`
+  - `Theme management`
+  - `LocalStorage`
+  - `Responsive design`
+  - `Error handling`
+  - `Real-time search`
 
 _(More projects will be added soon...)_  
 
