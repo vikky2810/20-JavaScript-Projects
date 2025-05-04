@@ -24,9 +24,9 @@ A modern Wikipedia search interface with dark mode support and real-time results
 
 ## 🔧 Installation
 1. Clone this repository:
-   ```bash
-   git clone https
-   cd wikipedia-search-viewer
+   ```
+    bash git clone https://github.com/vikky2810/20-JavaScript-Projects/
+    cd 10_Wikipedia_Search_Viewer
    ```
 2. Open `index.html` in your browser.
 
