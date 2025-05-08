@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Search App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-container">
+            <h1>Movie Search App</h1>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                🌙
+            </button>
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search for a movie...">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="loader">
+        <div class="loader-spinner"></div>
+        <p class="loader-text">Searching for movies...</p>
+    </div>
+    
+    <div class="error-message">
+        Oops! Something went wrong. Please try again.
+    </div>
+    
+    <div class="no-results">
+        No movies found. Try another search term.
+    </div>
+    
+    <div class="movies-grid"></div>
+</main>
+
+<div class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close">×</button>
+        <div class="modal-body">
+            <!-- Movie details will be inserted here by JavaScript -->
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
