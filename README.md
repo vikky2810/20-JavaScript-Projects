@@ -54,6 +54,25 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
   - `Error handling`
   - `Real-time search`
 
+1️⃣1️⃣ **Movie Search App 🎬** – A responsive movie search application using the OMDB API with detailed movie information
+- **Key Features**:
+  - Real-time movie search with OMDB API integration
+  - Responsive movie grid with hover effects
+  - Detailed modal view for movie information
+  - Dark/Light theme support
+  - Local storage for search history
+  - Loading states and error handling
+
+- **Concepts**: 
+  - `API Integration (OMDB)`
+  - `Modal Windows`
+  - `LocalStorage`
+  - `Responsive Design`
+  - `Error Handling`
+  - `CSS Variables`
+  - `Async/Await`
+  - `DOM Manipulation`
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
