@@ -73,6 +73,26 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
   - `Async/Await`
   - `DOM Manipulation`
 
+  1️⃣2️⃣ **Task Manager Kanban Board 📋** – A drag-and-drop task management system with Kanban-style columns
+- **Key Features**:
+  - Drag and drop tasks between status columns
+  - Create, edit, and delete tasks
+  - Task status tracking (To-Do, In Progress, Done)
+  - Dark/Light theme with system preference
+  - Search and filter functionality
+  - Local storage for task persistence
+  - Real-time task count updates
+
+- **Concepts**: 
+  - `Drag and Drop API`
+  - `LocalStorage Management`
+  - `Theme Switching`
+  - `DOM Manipulation`
+  - `Event Delegation`
+  - `CSS Grid/Flexbox`
+  - `CSS Variables`
+  - `Responsive Design`
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
