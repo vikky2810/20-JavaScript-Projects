@@ -58,7 +58,7 @@ task-manager/
 
 ## Demo
 
-You can try the live demo [here](https://task-manager-demo.vercel.app/). (Add your actual deployment link)
+You can try the live demo [here](https://todoverse-app.vercel.app/). (Add your actual deployment link)
 
 ## Features to Add
 
