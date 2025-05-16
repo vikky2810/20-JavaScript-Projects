@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Drag & Drop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <button id="theme-toggle" class="theme-toggle">Toggle Dark Mode</button>
+        </header>
+
+
+        <div class="add-task-form">
+            <h3>Add New Task</h3>
+            <div class="form-row">
+                <label for="task-title">Title</label>
+                <input type="text" id="task-title" placeholder="Enter task title">
+            </div>
+            <div class="form-row">
+                <label for="task-description">Description</label>
+                <textarea id="task-description" placeholder="Enter task description"></textarea>
+            </div>
+            <div class="form-row">
+                <label for="task-status">Status</label>
+                <select id="task-status">
+                    <option value="todo">To-Do</option>
+                    <option value="inprogress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+            <button id="add-task-btn">Add Task</button>
+        </div>
+
+        <div class="board">
+            <div class="column todo-column">
+                <div class="column-header">
+                    <span>To-Do</span>
+                    <span class="task-count" id="todo-count">0</span>
+                </div>
+                <div class="task-list" id="todo" data-status="todo"></div>
+            </div>
+            <div class="column in-progress-column">
+                <div class="column-header">
+                    <span>In Progress</span>
+                    <span class="task-count" id="inprogress-count">0</span>
+                </div>
+                <div class="task-list" id="inprogress" data-status="inprogress"></div>
+            </div>
+            <div class="column done-column">
+                <div class="column-header">
+                    <span>Done</span>
+                    <span class="task-count" id="done-count">0</span>
+                </div>
+                <div class="task-list" id="done" data-status="done"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Task</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="form-row">
+                <label for="edit-title">Title</label>
+                <input type="text" id="edit-title">
+            </div>
+            <div class="form-row">
+                <label for="edit-description">Description</label>
+                <textarea id="edit-description"></textarea>
+            </div>
+            <div class="form-row">
+                <label for="edit-status">Status</label>
+                <select id="edit-status">
+                    <option value="todo">To-Do</option>
+                    <option value="inprogress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+            <input type="hidden" id="edit-task-id">
+            <button id="save-edit-btn">Save Changes</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
