@@ -31,8 +31,8 @@ A modern, responsive task management web application featuring a Kanban-style bo
 Clone the repository:
 
 ```sh
-git clone https://github.com/yourusername/task-manager.git
-cd task-manager
+git clone https://github.com/vikky2810/20-JavaScript-Projects/
+cd 12_To Do List Kanban board
 ```
 
 Open `index.html` in your browser.
