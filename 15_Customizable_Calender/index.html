@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customizable Calendar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calendar-container">
+    <header>
+      <button id="prevMonth" title="Previous Month">&#8592;</button>
+      <h1 id="monthYear"></h1>
+      <button id="nextMonth" title="Next Month">&#8594;</button>
+      <select id="themeSwitcher">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </header>
+    <table class="calendar">
+      <thead>
+        <tr>
+          <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+        </tr>
+      </thead>
+      <tbody id="calendarBody">
+        <!-- Calendar days will be injected here -->
+      </tbody>
+    </table>
+  </div>
+  <!-- Event Modal Popup -->
+  <div id="eventModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 id="modalDate"></h2>
+      <textarea id="eventInput" placeholder="Add or edit event..."></textarea>
+      <div class="modal-actions">
+        <button id="saveEvent">Save</button>
+        <button id="deleteEvent">Delete</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
