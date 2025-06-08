@@ -93,6 +93,22 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
   - `CSS Variables`
   - `Responsive Design`
 
+1️⃣3️⃣ **Calculator App 🧮** – A modern, responsive calculator built with HTML, CSS, and JavaScript. Supports basic arithmetic, percent, clear, backspace, and keyboard input.
+
+- **Key Features**:
+  - Perform addition, subtraction, multiplication, and division
+  - Percent calculation
+  - Clear and backspace functions
+  - Keyboard input support
+  - Responsive design for all devices
+
+- **Concepts**:
+  - `DOM Manipulation`
+  - `Event Handling`
+  - `Keyboard Events`
+  - `Responsive CSS`
+  - `JavaScript Arithmetic`
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
@@ -118,4 +134,4 @@ This is a personal learning project, but feel free to fork, improve, and share y
 
 ---  
 
-🔥 Stay tuned for more exciting projects! 🚀  
+🔥 Stay tuned for more exciting projects! 🚀
