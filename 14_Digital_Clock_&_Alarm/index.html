@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14️⃣ Digital Clock & Alarm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⏰ Digital Clock & Alarm</h1>
+        <div class="clock-row">
+            <div class="clock" id="clock">00:00:00</div>
+            <button id="toggle-format" title="Switch 12/24h format">24H</button>
+        </div>
+        <form id="alarm-form">
+            <label for="alarm-time">Set Alarm:</label>
+            <input type="time" id="alarm-time" required>
+            <div class="alarm-btn-row">
+                <button type="submit">Set Alarm</button>
+                <button type="button" id="clear-alarm">Clear Alarm</button>
+            </div>
+        </form>
+        <div id="alarm-status"></div>
+        <div id="ring-animation" aria-hidden="true"></div>
+    </div>
+    <audio id="alarm-audio" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

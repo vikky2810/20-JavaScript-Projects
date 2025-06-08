@@ -1,0 +1,183 @@
+body {
+  background: #181824;
+  color: #f1f1f1;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #232946;
+  padding: 32px 28px 28px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 1.5px 8px #eebbc355;
+  text-align: center;
+  min-width: 320px;
+  max-width: 370px;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  color: #eebbc3;
+  letter-spacing: 1px;
+}
+
+.clock {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  color: #a3cef1;
+  text-shadow: 0 2px 8px #23294644;
+}
+
+.clock-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+#toggle-format {
+  background: #232946;
+  color: #eebbc3;
+  border: 2px solid #eebbc3;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 600;
+}
+#toggle-format.active {
+  background: #eebbc3;
+  color: #232946;
+}
+#toggle-format:focus {
+  outline: 2px solid #a3cef1;
+}
+
+#alarm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+#alarm-form label {
+  font-size: 1rem;
+  color: #b8c1ec;
+}
+
+#alarm-time {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #b8c1ec;
+  font-size: 1rem;
+  background: #232946;
+  color: #f1f1f1;
+}
+
+.alarm-btn-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+#alarm-form button {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #eebbc3;
+  color: #232946;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 4px;
+  transition: background 0.2s;
+  min-width: 100px;
+}
+
+#alarm-form button:hover {
+  background: #ffd6e0;
+}
+
+#alarm-form button:active {
+  transform: scale(0.97);
+}
+
+#alarm-status {
+  min-height: 24px;
+  font-size: 1.1rem;
+  color: #b8c1ec;
+  margin-top: 16px;
+  min-height: 32px;
+  border-radius: 6px;
+  background: #232946;
+  box-shadow: 0 1px 6px #eebbc322;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+#alarm-status.ringing {
+  color: #ff3860;
+  font-weight: bold;
+  animation: ringPulse 1s infinite alternate;
+  background: #ff386011;
+  border: 1.5px solid #ff3860;
+}
+
+#ring-animation {
+  display: none;
+  margin: 0 auto;
+  margin-top: 18px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #eebbc3;
+  border-top: 4px solid #ff3860;
+  animation: ringSpin 1s linear infinite;
+  box-shadow: 0 0 24px #ff3860, 0 0 8px #eebbc3;
+}
+#ring-animation.active {
+  display: block;
+}
+
+.ampm {
+  display: inline-block;
+  min-width: 2.5em;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #eebbc3;
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
+
+@keyframes ringPulse {
+  0% { text-shadow: 0 0 8px #ff3860; }
+  100% { text-shadow: 0 0 24px #ff3860; }
+}
+@keyframes ringSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 500px) {
+  .container {
+    min-width: 90vw;
+    padding: 18px 4vw;
+  }
+  .clock {
+    font-size: 2.1rem;
+  }
+}
