@@ -25,7 +25,7 @@ Live Demo: soon to be available
 ---
 
 ## 📸 Screenshot
-<!-- Add a screenshot or GIF of your project here -->
+![Digital Clock & Alarm Screenshot](clock.png)
 
 ---
 
