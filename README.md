@@ -109,6 +109,20 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
   - `Responsive CSS`
   - `JavaScript Arithmetic`
 
+1️⃣4️⃣ **Digital Clock & Alarm ⏰** – A modern digital clock with alarm functionality, 12/24-hour toggle, and animated alarm ring.
+- **Key Features**:
+  - Real-time digital clock display
+  - 12-hour / 24-hour format toggle
+  - Set and clear alarm easily
+  - Animated alarm ring and sound notification
+  - Responsive, accessible, and mobile-friendly UI
+- **Concepts**:
+  - `Date` and time manipulation
+  - `setInterval` for real-time updates
+  - DOM manipulation and event handling
+  - CSS gradients, transitions, and keyframe animations
+  - Responsive and accessible design
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
