@@ -123,6 +123,27 @@ A sleek dark-themed app to measure your typing speed, accuracy, and error count 
   - CSS gradients, transitions, and keyframe animations
   - Responsive and accessible design
 
+
+1️⃣5️⃣ **Customizable Calendar 📅** – A customizable calendar interface for managing dates and planning events.
+- **Concepts**:
+  - `Date API`
+  - `Dynamic rendering`
+  - `Interactive UI controls`
+
+1️⃣6️⃣ **Simple To-Do List ✅** – A clean to-do list app where users can add, complete, delete, and persist tasks.
+- **Key Features**:
+  - Add and delete tasks
+  - Mark tasks as completed
+  - Clear all completed tasks
+  - Local storage persistence
+  - Remaining-items counter
+
+- **Concepts**:
+  - `LocalStorage`
+  - `DOM Manipulation`
+  - `Event Delegation`
+  - `Form Handling`
+
 _(More projects will be added soon...)_  
 
 ## 🛠️ Technologies Used  
